@@ -1,0 +1,1 @@
+TRUNCATE TABLE short_urls, users;
