@@ -2,14 +2,14 @@
 
 # URL Shortener Service
 
-This project is a scalable and modular backend URL shortening system. It supports user authentication, short URL creation, and real-time notifications via Socket.IO. The application is structured around clean architecture and modular domain separation.
+This project is a scalable and modular backend URL shortening system. It supports user authentication, short URL creation, and real time notifications via Socket.IO. The application is structured around clean architecture and modular domain separation.
 
 ## Architecture Overview
 
 The system is composed of independently scoped modules:
 
 * **User Module** – Manages user profiles, timestamps, and related metadata.
-* **Auth Module** – Handles registration, login, secure password management, and JWT-based authentication.
+* **Auth Module** – Handles registration, login, secure password management, and JWT based authentication.
 * **URL Module** – Allows authenticated and unauthenticated users to create, manage, and retrieve short URLs with usage analytics.
 
 ## Technology Stack
@@ -17,7 +17,7 @@ The system is composed of independently scoped modules:
 * **Node.js (v18+)**
 * **NestJS Framework**
 * **TypeORM** (with PostgreSQL)
-* **Socket.IO** (for real-time events)
+* **Socket.IO** (for real time events)
 * **Custom migration and seed CLI tools**
 
 ## Features by Module
@@ -30,15 +30,15 @@ The system is composed of independently scoped modules:
 
 ### Auth Module
 
-* JWT-based auth system with secure cookies
-* Role-based access control
+* JWT based auth system with secure cookies
+* Role based access control
 * Registration, login, and token validation
 
 ### URL Module
 
 * Authenticated and unauthenticated users can generate custom short URLs
 * Tracks `clickCount` and metadata for analytics
-* Emits real-time event via Socket.IO upon URL creation (visible in console)
+* Emits real time event via Socket.IO upon URL creation (visible in console)
 * Each authenticated user sees only their URLs
 * Users can **claim previously created short URLs** (as unauthenticated users) upon signing up
 * Rate limiting per IP to mitigate spamming and abuse
@@ -47,7 +47,7 @@ The system is composed of independently scoped modules:
 
 ### Migrations
 
-Custom CLI-based migration system:
+Custom CLI based migration system:
 
 * `up/` and `down/` folders for applying and rolling back SQL files
 * Supports both local file tracking and persistent DB history
@@ -66,7 +66,7 @@ npm run seed        # Populate test data
 npm run seed:undo   # Undo last seeding
 ```
 
-## Real-Time Event Notification
+## Real Time Event Notification
 
 When a new short URL is created, the server emits a `short_url_created` event via Socket.IO. This allows for optional frontend or service integration that can respond to URL creation instantly. For now, this is logged in the console.
 
@@ -86,10 +86,9 @@ When a new short URL is created, the server emits a `short_url_created` event vi
 Create a `.env` file with:
 
 ```env
-PORT=5001
-DATABASE_URL=postgresql://postgres:2003@localhost:5432/url_shortener
+PORT=...
+DATABASE_URL=...
 JWT_SECRET=your_jwt_secret
-NODE_ENV=development
 ```
 
 ### Install & Run
@@ -122,12 +121,12 @@ src/
 ## Future Enhancements
 
 * Add Swagger documentation
-* Redis caching for high-frequency routes
+* Redis caching for high frequency routes
 * Add unit/integration testing with Jest
 
 ## Acknowledgements
 
-Built with NestJS and designed to demonstrate clear understanding of domain-based modular design, event-driven architecture, raw SQL-based database operations, and robust migration/seeding strategies using handcrafted CLI tools.
+Built with NestJS and designed to demonstrate clear understanding of domain based modular design, event driven architecture, raw SQL based database operations, and robust migration/seeding strategies using handcrafted CLI tools.
 
 ## License
 
