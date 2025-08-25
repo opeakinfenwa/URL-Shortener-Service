@@ -2,7 +2,7 @@
 
 # URL Shortener Service
 
-This project is a scalable and modular backend URL shortening system. It supports user authentication, short URL creation, and real time notifications via Socket.IO. The application is structured around clean architecture and modular domain separation.
+This project is a scalable and modular backend URL shortening system. It supports user authentication, short URL creation, and real-time notifications via Socket.IO. The application is structured around clean architecture and modular domain separation.
 
 ## Architecture Overview
 
@@ -38,7 +38,7 @@ The system is composed of independently scoped modules:
 
 * Authenticated and unauthenticated users can generate custom short URLs
 * Tracks `clickCount` and metadata for analytics
-* Emits real time event via Socket.IO upon URL creation (visible in console)
+* Emits real-time event via Socket.IO upon URL creation (visible in console)
 * Each authenticated user sees only their URLs
 * Users can **claim previously created short URLs** (as unauthenticated users) upon signing up
 * Rate limiting per IP to mitigate spamming and abuse
